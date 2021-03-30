@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>User Management</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	  <!-- Include menu.html -->
+      <th:block th:include="/menu"></th:block>
+      <div class="container">
+      		<h1>Register User</h1>
+      		<form action="#" th:action="@{/register}" th:object="${user}" method="POST">
+      			<input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4" required/>
+      			<input type="password" th:field="*{password}" placeholder="Password" class="form-control mb-4 col-4" required/>
+      			<input type="text" th:field="*{firstName}" placeholder="Username" class="form-control mb-4 col-4" required/>
+      			<input type="text" th:field="*{lastName}" placeholder="Username" class="form-control mb-4 col-4" required/>
+      			<button type="submit" class="btn btn-info col-2">Register</button>
+      		</form>
+      		<a th:href="@{/}">Back to previous page</a>
+      </div>
+</body>
+</html>
